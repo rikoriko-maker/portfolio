@@ -1,0 +1,398 @@
+:root {
+  --main-text-color: #3a3a3a;
+  --sub-text-color: #5a5a5a;
+  --accent-color: #7a8aad;
+  --bg-light: #ffffff;
+  --bg-muted: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--main-text-color);
+  line-height: 1.8;
+}
+
+header.hero {
+  height: 100vh;
+  background-image: url('sora.JPEG');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  color: #fff;
+  flex-direction: column; 
+}
+
+.hero-content {
+  max-width: 80%;
+  background-color: transparent;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: none;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-family: 'Cinzel', serif; 
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); 
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 1rem;
+  color: #e5e5e5;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.03em;
+  margin-top: 0;
+}
+
+section {
+  max-width: 1100px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--main-text-color);
+  position: relative;
+  text-align: center;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto 2rem;
+}
+
+.about p,
+.works ul,
+.thoughts p,
+.contact p {
+  color: var(--sub-text-color);
+  font-size: 1rem;
+}
+
+.works ul {
+  list-style: none;
+  padding: 0;
+}
+
+.works li {
+  margin: 0.5rem 0;
+}
+
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 280px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer.contact {
+  padding: 4rem 1.5rem;
+  background-color: var(--bg-muted);
+  text-align: center;
+}
+
+footer.contact h2 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+    text-align: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    z-index: 9;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .hero-content h1 {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;  
+    letter-spacing: 0.02em;
+    white-space: nowrap;  
+  }
+
+  .about p,
+  .works li,
+  .thoughts p,
+  .contact p {
+    font-size: 0.95rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .about-text {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+.navbar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent; 
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  opacity: 0.7;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.nav-toggle .bar {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.about {
+  padding: 6rem 1rem;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 3rem !important; /* ← セクション全体の下の余白を強制的に減らす */
+  }
+  
+  .about p:last-child {
+    margin-bottom: 0 !important; /* ← 最後の段落の下マージンも念のため削除 */
+  }
+  
+.about-container {
+  display: flex;
+  align-items: flex-start; /* 上端を揃える */
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin-top: 1rem;
+  margin-bottom: 0 !important;
+  padding: 0 2rem;
+}
+
+.about-image {
+  width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  margin-top: 0; /* 念のため余計な余白を排除 */
+}
+
+section.about {
+  margin-top: 3rem;     /* 上の余白を減らす */
+  margin-bottom: 3rem;  /* 下の余白もWorksと揃える */
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 1rem;
+  color: var(--sub-text-color);
+  text-align: left;
+  line-height: 1.8;
+  margin-top: -2.0rem;
+}
+
+.about-text h2 {
+  text-align: left;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.about-text h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent-color);
+  margin-top: 0.5rem;
+}
+
+.contact .social-links {
+  margin-top: 1rem;
+}
+
+.contact .social-links a {
+  color: #3a3a3a;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-right: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.contact .social-links a:hover {
+  opacity: 0.7;
+}
+
+.thoughts {
+  padding: 0 3rem;
+}
+
+.thoughts p {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .about-image {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .about-text {
+    padding-top: 1.5rem;
+  }
+}
+
+/* ==== カスタム調整エリア ==== */
+
+section.about {
+  margin-bottom: 3rem;
+}
+
+section.works {
+  margin-top: 0;
+}
